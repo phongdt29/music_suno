@@ -237,6 +237,48 @@ img { display: block; }
 .player-right { display: flex; align-items: center; justify-content: flex-end; gap: 10px; color: var(--text-sub); }
 .seek.vol { max-width: 110px; flex: none; width: 110px; }
 
+/* ===== Trang Tạo nhạc ===== */
+.create-page { max-width: 760px; }
+.create-hero { margin: 8px 0 24px; }
+.create-hero h1 { font-size: 32px; font-weight: 900; }
+.create-hero p { color: var(--text-sub); margin-top: 6px; }
+
+.create-form { display: flex; flex-direction: column; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field > span { font-size: 13px; font-weight: 700; color: var(--text-sub); }
+.field input, .field textarea {
+  background: var(--bg-elev2); border: 1px solid #2a2a2a; border-radius: 8px;
+  padding: 12px 14px; color: #fff; font-size: 15px; font-family: inherit; resize: vertical;
+  transition: border-color .15s;
+}
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
+.field input::placeholder, .field textarea::placeholder { color: #6a6a6a; }
+
+.toggles { display: flex; flex-wrap: wrap; gap: 20px; }
+.switch-row { display: flex; align-items: center; gap: 10px; font-size: 14px; cursor: pointer; user-select: none; }
+.switch-row input { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
+
+.play-pill.big { align-self: flex-start; font-size: 16px; padding: 14px 36px; margin-top: 4px; }
+
+/* Tiến trình */
+.gen-progress { text-align: center; padding: 48px 24px; max-width: 520px; margin: 0 auto; }
+.gen-progress h3 { font-size: 22px; margin: 18px 0 8px; }
+.gen-spinner {
+  width: 54px; height: 54px; margin: 0 auto; border-radius: 50%;
+  border: 5px solid #2a2a2a; border-top-color: var(--accent);
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.bar { height: 8px; background: #2a2a2a; border-radius: 4px; overflow: hidden; margin: 22px 0 8px; }
+.bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #1ed760); transition: width .4s ease; }
+.bar-pct { font-size: 13px; color: var(--text-sub); font-weight: 700; }
+
+/* Kết quả */
+.gen-result { margin-top: 8px; }
+.lyrics-box { margin-top: 28px; background: var(--bg-elev2); border-radius: 10px; padding: 20px 24px; }
+.lyrics-box h4 { font-size: 15px; margin-bottom: 12px; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; }
+.lyrics-box pre { font-family: inherit; white-space: pre-wrap; line-height: 1.7; color: #e8e8e8; font-size: 15px; }
+
 /* Scrollbar */
 .content::-webkit-scrollbar, .library::-webkit-scrollbar { width: 10px; }
 .content::-webkit-scrollbar-thumb, .library::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 5px; }

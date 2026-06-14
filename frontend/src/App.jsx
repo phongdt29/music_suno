@@ -4,6 +4,7 @@ import TopBar from './components/TopBar.jsx';
 import Player from './components/Player.jsx';
 import Home from './pages/Home.jsx';
 import Search from './pages/Search.jsx';
+import Create from './pages/Create.jsx';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/create" element={<Create />} />
           </Routes>
         </div>
       </div>

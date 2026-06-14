@@ -9,6 +9,9 @@ const SearchIcon = () => (
 const LibraryIcon = () => (
   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 4h2v16H4zM8 4h2v16H8zM13 4l5 1-3 15-5-1z" /></svg>
 );
+const CreateIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 5v14M5 12h14" /></svg>
+);
 
 export default function Sidebar() {
   return (
@@ -24,6 +27,9 @@ export default function Sidebar() {
         </NavLink>
         <NavLink to="/search" className="nav-item">
           <SearchIcon /> <span>Tìm kiếm</span>
+        </NavLink>
+        <NavLink to="/create" className="nav-item">
+          <CreateIcon /> <span>Tạo nhạc</span>
         </NavLink>
       </nav>
 

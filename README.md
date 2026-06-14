@@ -41,6 +41,13 @@ npm run backend    # http://localhost:4000
 npm run frontend   # http://localhost:5173
 ```
 
+### Build & chạy production
+```bash
+npm run build      # build frontend -> frontend/dist
+npm start          # backend phục vụ cả UI + API tại http://localhost:4000
+```
+📖 Xem chi tiết cấu hình, PM2, Apache/Nginx, cắm API key thật: **[DEPLOYMENT.md](DEPLOYMENT.md)**
+
 ## API backend
 | Method | Endpoint | Mô tả |
 |--------|----------|-------|

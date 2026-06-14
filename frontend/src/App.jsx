@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar.jsx';
 import TopBar from './components/TopBar.jsx';
 import Player from './components/Player.jsx';
+import LyricsPanel from './components/LyricsPanel.jsx';
 import Home from './pages/Home.jsx';
 import Search from './pages/Search.jsx';
 import Create from './pages/Create.jsx';
@@ -12,6 +13,7 @@ export default function App() {
       <Sidebar />
       <div className="main">
         <TopBar />
+        <LyricsPanel />
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />

@@ -20,6 +20,13 @@ function setCache(key, data) {
   cache.set(key, { at: Date.now(), data });
 }
 
+// Làm sạch lời bài hát: bỏ dòng "Original song: ..." và dấu --- ở đầu (nếu có).
+function cleanLyrics(raw) {
+  if (!raw) return null;
+  let text = raw.replace(/^Original song:.*$/im, '').replace(/^-{3,}\s*$/gm, '').trim();
+  return text || null;
+}
+
 // Chuẩn hoá 1 "clip" của Suno về bài hát gọn cho UI.
 function normalizeClip(clip) {
   if (!clip) return null;
@@ -31,6 +38,7 @@ function normalizeClip(clip) {
     imageUrl: clip.image_large_url || clip.image_url || null,
     videoUrl: clip.video_url || null,
     duration: meta.duration ? Math.round(meta.duration) : null,
+    lyrics: cleanLyrics(meta.prompt), // có ở endpoint chi tiết clip; list thường null
     tags: meta.tags || clip.tags || '',
     playCount: clip.play_count || 0,
     upvoteCount: clip.upvote_count || 0,

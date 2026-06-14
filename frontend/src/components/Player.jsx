@@ -9,6 +9,7 @@ const Icon = {
   Shuffle: () => <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17 3l4 4-4 4V8h-2.5l-2 2-1.5-1.5L13 6h4V3zM3 6h4l3.5 3.5L9 11 6 8H3zm14 7v-3l4 4-4 4v-3h-4l-3-3 1.5-1.5L14.5 13zM3 16h4l2-2 1.5 1.5L8 18H3z" /></svg>,
   Repeat: () => <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7 7h10v3l4-4-4-4v3H5v6h2zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2z" /></svg>,
   Volume: () => <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4 9v6h4l5 5V4L8 9zM16 8a5 5 0 010 8" fill="none" stroke="currentColor" strokeWidth="2" /></svg>,
+  Lyrics: () => <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M4 6h16M4 10h10M4 14h16M4 18h8" /></svg>,
 };
 
 export default function Player() {
@@ -61,8 +62,16 @@ export default function Player() {
         </div>
       </div>
 
-      {/* Âm lượng */}
+      {/* Lời bài hát + Âm lượng */}
       <div className="player-right">
+        <button
+          className={`ctrl ${p.showLyrics ? 'on' : ''}`}
+          onClick={p.toggleLyrics}
+          title="Lời bài hát"
+          disabled={!current}
+        >
+          <Icon.Lyrics />
+        </button>
         <Icon.Volume />
         <input
           className="seek vol"

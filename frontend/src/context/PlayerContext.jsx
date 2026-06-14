@@ -13,6 +13,7 @@ export function PlayerProvider({ children }) {
   const [volume, setVolumeState] = useState(0.8);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
+  const [showLyrics, setShowLyrics] = useState(false);
 
   const current = index >= 0 ? queue[index] : null;
 
@@ -112,6 +113,7 @@ export function PlayerProvider({ children }) {
     volume,
     repeat,
     shuffle,
+    showLyrics,
     playSong,
     togglePlay,
     next,
@@ -120,6 +122,8 @@ export function PlayerProvider({ children }) {
     setVolume,
     toggleRepeat: () => setRepeat((r) => !r),
     toggleShuffle: () => setShuffle((s) => !s),
+    toggleLyrics: () => setShowLyrics((v) => !v),
+    closeLyrics: () => setShowLyrics(false),
   };
 
   return <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>;
